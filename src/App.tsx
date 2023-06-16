@@ -8,6 +8,7 @@ import { store } from './store'
 import { ResultPage } from './pages/Result'
 import { AppLayout } from './layout'
 import { ResultRacePage } from './pages/Result/pages/Race'
+import { ResultTeamPage } from './pages/Result/pages/Team'
 
 export function App() {
   return (
@@ -26,11 +27,11 @@ export function App() {
                   path={`${rc(RouteKey.ResultRaces).subPath}/*`}
                   element={
                     <Routes>
-                      <Route index path="" element={<ResultRacePage />} />
                       <Route
                         path={rc(RouteKey.ResultRacesDetail).subPath!}
                         element={<div>hihi</div>}
                       />
+                      <Route index path="" element={<ResultRacePage />} />
                     </Routes>
                   }
                 />
@@ -43,12 +44,8 @@ export function App() {
                   }
                 />
                 <Route
-                  path={`${rc(RouteKey.ResultTeams).subPath}/*`}
-                  element={
-                    <Routes>
-                      <Route index path="" element={<div>hihihi</div>} />
-                    </Routes>
-                  }
+                  path={`${rc(RouteKey.ResultTeams).subPath}`}
+                  element={<ResultTeamPage />}
                 />
                 <Route
                   path={`${rc(RouteKey.ResultFastest).subPath}/*`}

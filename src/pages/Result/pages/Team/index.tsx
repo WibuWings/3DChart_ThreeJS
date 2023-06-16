@@ -30,9 +30,9 @@ import { mockData } from './mock-data'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { RouteKey, rc } from '@/routes'
-import slugify from 'slugify'
+import { Team } from './model'
 
-export const ResultRacePage = () => {
+export const ResultTeamPage = () => {
   // hooks
   const { token } = theme.useToken()
   // query api
@@ -60,23 +60,26 @@ export const ResultRacePage = () => {
     <Space direction="vertical" style={{ width: '100%' }}>
       <Space align="start">
         <Space wrap>
-          <Input.Search
-            loading={false}
-            placeholder="Search..."
-            onSearch={() => {
-              setCurrentPage(1)
-              setKeyword(keywordInput)
-            }}
-            value={keywordInput}
-            onChange={(event) => {
-              setKeywordInput(event.target.value)
-            }}
-          />
           <DatePicker.YearPicker defaultValue={moment()} />
           <Button loading={false} icon={<Icon.ReloadOutlined />} onClick={resetParamsAndRefresh}>
             Refresh
           </Button>
         </Space>
+      </Space>
+      <Space>
+        <Input.Search
+          loading={false}
+          allowClear
+          placeholder="Search..."
+          onSearch={() => {
+            setCurrentPage(1)
+            setKeyword(keywordInput)
+          }}
+          value={keywordInput}
+          onChange={(event) => {
+            setKeywordInput(event.target.value)
+          }}
+        />
       </Space>
       <Table
         rowKey="_id"
@@ -102,47 +105,31 @@ export const ResultRacePage = () => {
         }}
         columns={[
           {
-            title: 'GRAND PRIX',
-            dataIndex: 'Grand Prix',
+            title: 'POS',
+            dataIndex: 'Pos',
             sorter: true,
-            render: (_, race) => (
-              <Link
-                to={
-                  rc(RouteKey.ResultRacesDetail)?.pather?.(
-                    slugify(race['Grand Prix'], { replacement: '-', lower: true })
-                  )!
-                }
-              >
-                {race['Grand Prix']}
-              </Link>
-            ),
+            render: (_, team) => team['Pos'],
           },
           {
-            title: 'DATE',
-            dataIndex: 'Date',
+            title: 'TEAM',
+            dataIndex: 'Team',
             sorter: true,
-            render: (_, race) => race['Date'],
+            render: (_, team) => team['Team'],
           },
           {
-            title: 'WINNER',
-            dataIndex: 'Winner',
+            title: 'PTS',
+            dataIndex: 'PTS',
             sorter: true,
-            render: (_, race) => race['Winner'],
-          },
-          {
-            title: 'CAR',
-            dataIndex: 'Car',
-            sorter: true,
-            render: (_, race) => race['Car'],
-          },
-          {
-            title: 'LAP',
-            dataIndex: 'Laps',
-            sorter: true,
-            render: (_, race) => race['Laps'],
+            width: '30%',
+            align: 'center',
+            render: (_, team) => team['PTS'],
           },
         ]}
       />
     </Space>
   )
+}
+
+const TempChart = ({ team }: React.PropsWithChildren<{ team: Team }>) => {
+  return <div></div>
 }

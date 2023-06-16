@@ -59,7 +59,7 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
       id: RouteKey.ResultRacesDetail,
       name: 'Races',
       path: '/result/races/:_id',
-      subPath: 'races/:_id',
+      subPath: ':_id',
       pather(_id: string) {
         return generatePath(this.path, { _id })
       },
