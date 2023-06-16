@@ -1,0 +1,26 @@
+node_modules
+.DS_Store
+*.local
+
+# compiled output
+dist
+tmp
+yarn.lock
+
+*.pyc
+*.sh
+setup.cfg
+pywebview.egg-info
+MANIFEST
+build
+.cache
+.idea
+.vs
+bin
+obj
+gui
+venv*
+.vscode
+.pytest_cache
+__pycache__
+.eggs
