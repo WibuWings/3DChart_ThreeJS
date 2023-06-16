@@ -16,7 +16,7 @@ export enum RouteKey {
   ResultTeams,
   ResultTeamsDetail,
   ResultFastest,
-  ResultFastestDetail
+  ResultFastestDetail,
 }
 
 export interface RouteConfig {
@@ -44,7 +44,7 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
       id: RouteKey.ResultDriversDetail,
       name: 'Driver',
       path: '/result/drivers/:id',
-      subPath: 'drivers/:id',
+      subPath: ':id',
       pather(_id: string) {
         return generatePath(this.path, { _id })
       },
@@ -58,12 +58,13 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
     {
       id: RouteKey.ResultRacesDetail,
       name: 'Races',
-      path: '/result/races/:id',
-      subPath: 'races/:id',
+      path: '/result/races/:_id',
+      subPath: 'races/:_id',
       pather(_id: string) {
         return generatePath(this.path, { _id })
       },
-    },{
+    },
+    {
       id: RouteKey.ResultTeams,
       name: 'Teams',
       path: '/result/teams',
@@ -80,9 +81,9 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
     },
     {
       id: RouteKey.ResultFastest,
-      name: 'Teams',
-      path: '/result/teams',
-      subPath: 'teams',
+      name: 'Fastest',
+      path: '/result/fastest',
+      subPath: 'fastest',
     },
     {
       id: RouteKey.ResultFastestDetail,

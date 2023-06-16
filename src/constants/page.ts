@@ -18,8 +18,8 @@ export const SORT_KEY = {
 }
 
 export const PAGE_TABLE = {
-  PERPAGE: 50,
-  PAGE_SIZE_OPTIONS: ['20', '50', '100'],
+  PERPAGE: 10,
+  PAGE_SIZE_OPTIONS: ['10', '20', '50'],
   DEBOUNCE_DELAY: 500,
   SORT_KEY,
   SORTER_VALUE: SORT_VALUE,
