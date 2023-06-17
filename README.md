@@ -1,5 +1,3 @@
-Here is a possible readme for a React JS project with Vite builder:
-
 # React Vite Project
 
 This is a React project that uses [Vite](https://vitejs.dev/) as a build tool.
