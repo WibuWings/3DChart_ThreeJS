@@ -40,3 +40,20 @@ yarn build
 ```
 
 The output files will be generated in the `dist` folder.
+### Result
+Races tab
+![image](https://github.com/WibuWings/VrillarTest/assets/57323642/e50d38ee-078f-4b58-bf81-4a2d076c43ff)
+
+Race detail
+![image](https://github.com/WibuWings/VrillarTest/assets/57323642/2c72b558-9e3b-4ec7-b830-68adffa920da)
+
+Drivers tab
+![image](https://github.com/WibuWings/VrillarTest/assets/57323642/eb89f258-0d10-4477-9bff-f28db518aaa9)
+
+Teams tab with Chart. This chart is implemented by Threejs & React/Three Fiber
+![image](https://github.com/WibuWings/VrillarTest/assets/57323642/6853ebeb-0bfb-4962-b332-d25650d3d64d)
+
+Fastest tab
+![image](https://github.com/WibuWings/VrillarTest/assets/57323642/95d6c5bf-af1d-4d21-bfb0-207a7b79cc7c)
+
+
