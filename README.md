@@ -20,7 +20,7 @@ To run this project, you need to have [Node.js](https://nodejs.org/) and [Yarn](
 First, clone this repository and install the dependencies:
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
+git clone [https://github.com/<your-username>/<your-repo-name>.git](https://github.com/WibuWings/VrillarTest.git)
 cd <your-repo-name>
 yarn install
 ```
@@ -31,7 +31,7 @@ Then, start the development server:
 yarn dev
 ```
 
-Open http://localhost:3000 to view your app in the browser.
+Open http://localhost:5173 to view your app in the browser.
 
 To build the project for production, run:
 
@@ -40,34 +40,3 @@ yarn build
 ```
 
 The output files will be generated in the `dist` folder.
-
-To run the tests, run:
-
-```bash
-yarn test
-```
-
-To check the code quality and format, run:
-
-```bash
-yarn lint
-yarn format
-```
-
-## Deployment
-
-This project is configured to deploy to GitHub Pages using GitHub Actions.
-
-To deploy your app, you need to set the `homepage` field in the `package.json` file to your GitHub Pages URL, such as:
-
-```json
-"homepage": "https://<your-username>.github.io/<your-repo-name>"
-```
-
-Then, push your code to the `main` branch. The GitHub Action will automatically build and deploy your app to GitHub Pages.
-
-You can also customize the deployment script in the `.github/workflows/deploy.yml` file.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
