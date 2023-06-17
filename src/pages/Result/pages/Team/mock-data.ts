@@ -5,7 +5,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 1,
     Team: 'Red Bull Racing Honda RBPT',
     PTS: 287,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -38,7 +38,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
       },
       {
         'Grand Prix': 'Spain',
-        Date: '	04 Jun 2023',
+        Date: '04 Jun 2023',
         PTS: 38,
       },
     ],
@@ -47,7 +47,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 2,
     Team: 'Mercedes',
     PTS: 152,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -89,7 +89,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 3,
     Team: 'Aston Martin Aramco Mercedes',
     PTS: 134,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -131,7 +131,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 4,
     Team: 'Ferrari',
     PTS: 100,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -173,7 +173,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 5,
     Team: 'Alpine Renault',
     PTS: 40,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -215,7 +215,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 6,
     Team: 'McLaren Mercedes',
     PTS: 17,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -257,7 +257,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 7,
     Team: 'Haas Ferrari',
     PTS: 8,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -299,7 +299,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 8,
     Team: 'Alfa Romeo Ferrari',
     PTS: 8,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -341,7 +341,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 9,
     Team: 'AlphaTauri Honda RBPT',
     PTS: 2,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',
@@ -383,7 +383,7 @@ const mockRaw: Omit<Team, '_id'>[] = [
     Pos: 10,
     Team: 'Williams Mercedes',
     PTS: 1,
-    history: [
+    histories: [
       {
         'Grand Prix': 'Bahrain',
         Date: '05 Mar 2023',

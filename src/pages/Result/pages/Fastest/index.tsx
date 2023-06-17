@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
 import { RouteKey, rc } from '@/routes'
 import slugify from 'slugify'
 
-export const ResultRacePage = () => {
+export const ResultFastestPage = () => {
   // hooks
   const { token } = theme.useToken()
   // query api
@@ -105,41 +105,25 @@ export const ResultRacePage = () => {
             title: 'GRAND PRIX',
             dataIndex: 'Grand Prix',
             sorter: true,
-            render: (_, race) => (
-              <Link
-                to={
-                  rc(RouteKey.ResultRacesDetail)?.pather?.(
-                    slugify(race['Grand Prix'], { replacement: '-', lower: true })
-                  )!
-                }
-              >
-                {race['Grand Prix']}
-              </Link>
-            ),
+            render: (_, fastest) => fastest['Grand Prix'],
           },
           {
-            title: 'DATE',
-            dataIndex: 'Date',
+            title: 'DRIVER',
+            dataIndex: 'Driver',
             sorter: true,
-            render: (_, race) => race['Date'] as string,
-          },
-          {
-            title: 'WINNER',
-            dataIndex: 'Winner',
-            sorter: true,
-            render: (_, race) => race['Winner'],
+            render: (_, fastest) => fastest['Driver'],
           },
           {
             title: 'CAR',
             dataIndex: 'Car',
             sorter: true,
-            render: (_, race) => race['Car'],
+            render: (_, fastest) => fastest['Car'],
           },
           {
-            title: 'LAP',
-            dataIndex: 'Laps',
+            title: 'TIME',
+            dataIndex: 'Time',
             sorter: true,
-            render: (_, race) => race['Laps'],
+            render: (_, fastest) => fastest['Time'],
           },
         ]}
       />

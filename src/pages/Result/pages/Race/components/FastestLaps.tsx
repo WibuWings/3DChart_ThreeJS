@@ -121,7 +121,7 @@ export const ResultRacePage = () => {
             title: 'DATE',
             dataIndex: 'Date',
             sorter: true,
-            render: (_, race) => race['Date'] as string,
+            render: (_, race) => race['Date'],
           },
           {
             title: 'WINNER',

@@ -1,4 +1,5 @@
 import { Moment } from 'moment'
+import { Color } from 'three'
 
 type History = {
   'Grand Prix': string
@@ -11,5 +12,5 @@ export type Team = {
   Pos: number
   Team: string
   PTS: number
-  history: History[]
+  histories: History[]
 }

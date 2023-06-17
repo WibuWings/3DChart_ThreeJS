@@ -32,7 +32,7 @@ import { Link } from 'react-router-dom'
 import { RouteKey, rc } from '@/routes'
 import slugify from 'slugify'
 
-export const ResultRacePage = () => {
+export const ResultDriverPage = () => {
   // hooks
   const { token } = theme.useToken()
   // query api
@@ -102,44 +102,34 @@ export const ResultRacePage = () => {
         }}
         columns={[
           {
-            title: 'GRAND PRIX',
-            dataIndex: 'Grand Prix',
+            title: 'POS',
+            dataIndex: 'Pos',
             sorter: true,
-            render: (_, race) => (
-              <Link
-                to={
-                  rc(RouteKey.ResultRacesDetail)?.pather?.(
-                    slugify(race['Grand Prix'], { replacement: '-', lower: true })
-                  )!
-                }
-              >
-                {race['Grand Prix']}
-              </Link>
-            ),
+            render: (_, driver) => driver['Pos'],
           },
           {
-            title: 'DATE',
+            title: 'DRIVER',
             dataIndex: 'Date',
             sorter: true,
-            render: (_, race) => race['Date'] as string,
+            render: (_, driver) => driver['Driver'],
           },
           {
-            title: 'WINNER',
+            title: 'NATIONALITY',
             dataIndex: 'Winner',
             sorter: true,
-            render: (_, race) => race['Winner'],
+            render: (_, driver) => driver['Nationality'],
           },
           {
             title: 'CAR',
             dataIndex: 'Car',
             sorter: true,
-            render: (_, race) => race['Car'],
+            render: (_, driver) => driver['Car'],
           },
           {
-            title: 'LAP',
-            dataIndex: 'Laps',
+            title: 'PTS',
+            dataIndex: 'PTS',
             sorter: true,
-            render: (_, race) => race['Laps'],
+            render: (_, driver) => driver['PTS'],
           },
         ]}
       />

@@ -36,7 +36,7 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
     },
     {
       id: RouteKey.ResultDrivers,
-      name: 'Driver',
+      name: 'Drivers',
       path: '/result/drivers',
       subPath: 'drivers',
     },
@@ -57,7 +57,7 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
     },
     {
       id: RouteKey.ResultRacesDetail,
-      name: 'Races',
+      name: 'Race',
       path: '/result/races/:_id',
       subPath: ':_id',
       pather(_id: string) {
@@ -72,7 +72,7 @@ export const routeMap: ReadonlyMap<RouteKey, RouteConfig> = new Map(
     },
     {
       id: RouteKey.ResultTeamsDetail,
-      name: 'Teams',
+      name: 'Team',
       path: '/result/teams/:id',
       subPath: 'teams/:id',
       pather(_id: string) {

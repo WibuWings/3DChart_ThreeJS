@@ -9,6 +9,9 @@ import { ResultPage } from './pages/Result'
 import { AppLayout } from './layout'
 import { ResultRacePage } from './pages/Result/pages/Race'
 import { ResultTeamPage } from './pages/Result/pages/Team'
+import { ResultDriverPage } from './pages/Result/pages/Driver'
+import { ResultFastestPage } from './pages/Result/pages/Fastest'
+import { RaceDetail } from './pages/Result/pages/Race/pages/Detail'
 
 export function App() {
   return (
@@ -28,9 +31,14 @@ export function App() {
                   element={
                     <Routes>
                       <Route
-                        path={rc(RouteKey.ResultRacesDetail).subPath!}
-                        element={<div>hihi</div>}
-                      />
+                        path={`${rc(RouteKey.ResultRacesDetail).subPath!}/*`}
+                        element={<RaceDetail />}
+                      >
+                        <Route index element={<Navigate to="race-result" replace />} />
+                        <Route path={'race-result'} element={<div>result</div>}></Route>
+                        <Route path={'fastest-laps'} element={<div>fastest-las</div>}></Route>
+                        <Route path="*" element={<Navigate to="race-result" replace />} />
+                      </Route>
                       <Route index path="" element={<ResultRacePage />} />
                     </Routes>
                   }
@@ -39,7 +47,7 @@ export function App() {
                   path={`${rc(RouteKey.ResultDrivers).subPath}/*`}
                   element={
                     <Routes>
-                      <Route index path="" element={<div>hihi</div>} />
+                      <Route index path="" element={<ResultDriverPage />} />
                     </Routes>
                   }
                 />
@@ -51,7 +59,7 @@ export function App() {
                   path={`${rc(RouteKey.ResultFastest).subPath}/*`}
                   element={
                     <Routes>
-                      <Route index path="" element={<div>hihihihi</div>} />
+                      <Route index path="" element={<ResultFastestPage />} />
                     </Routes>
                   }
                 />
