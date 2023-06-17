@@ -12,6 +12,7 @@ import { ResultTeamPage } from './pages/Result/pages/Team'
 import { ResultDriverPage } from './pages/Result/pages/Driver'
 import { ResultFastestPage } from './pages/Result/pages/Fastest'
 import { RaceDetail } from './pages/Result/pages/Race/pages/Detail'
+import { ResultRace } from './pages/Result/pages/Race/components/RaceResult'
 
 export function App() {
   return (
@@ -35,7 +36,7 @@ export function App() {
                         element={<RaceDetail />}
                       >
                         <Route index element={<Navigate to="race-result" replace />} />
-                        <Route path={'race-result'} element={<div>result</div>}></Route>
+                        <Route path={'race-result'} element={<ResultRace />}></Route>
                         <Route path={'fastest-laps'} element={<div>fastest-las</div>}></Route>
                         <Route path="*" element={<Navigate to="race-result" replace />} />
                       </Route>

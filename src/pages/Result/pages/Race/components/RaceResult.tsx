@@ -26,13 +26,13 @@ import {
 import * as Icon from '@ant-design/icons'
 
 import { PAGE_TABLE } from '@/constants/page'
-import { mockData } from './mock-data'
+import { mockDataRaceResult } from '../mock-data'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 import { RouteKey, rc } from '@/routes'
 import slugify from 'slugify'
 
-export const ResultRacePage = () => {
+export const ResultRace = () => {
   // hooks
   const { token } = theme.useToken()
   // query api
@@ -72,7 +72,6 @@ export const ResultRacePage = () => {
               setKeywordInput(event.target.value)
             }}
           />
-          <DatePicker.YearPicker defaultValue={moment()} />
           <Button loading={false} icon={<Icon.ReloadOutlined />} onClick={resetParamsAndRefresh}>
             Refresh
           </Button>
@@ -87,12 +86,12 @@ export const ResultRacePage = () => {
           })
         }}
         loading={false}
-        dataSource={mockData}
+        dataSource={mockDataRaceResult}
         pagination={{
           pageSizeOptions: PAGE_TABLE.PAGE_SIZE_OPTIONS,
           current: currentPage,
           pageSize: pageSize,
-          total: mockData.length,
+          total: mockDataRaceResult.length,
           showTotal: (total) => `Total: ${total}`,
           showSizeChanger: true,
           onChange: (page, pageSize) => {
@@ -102,44 +101,46 @@ export const ResultRacePage = () => {
         }}
         columns={[
           {
-            title: 'GRAND PRIX',
-            dataIndex: 'Grand Prix',
+            title: 'POS',
+            dataIndex: 'Pos',
             sorter: true,
-            render: (_, race) => (
-              <Link
-                to={
-                  rc(RouteKey.ResultRacesDetail)?.pather?.(
-                    slugify(race['Grand Prix'], { replacement: '-', lower: true })
-                  )!
-                }
-              >
-                {race['Grand Prix']}
-              </Link>
-            ),
+            render: (_, raceResult) => raceResult['Pos'],
           },
           {
-            title: 'DATE',
-            dataIndex: 'Date',
+            title: 'NO',
+            dataIndex: 'No',
             sorter: true,
-            render: (_, race) => race['Date'],
+            render: (_, raceResult) => raceResult['No'],
           },
           {
-            title: 'WINNER',
-            dataIndex: 'Winner',
+            title: 'DRIVER',
+            dataIndex: 'Driver',
             sorter: true,
-            render: (_, race) => race['Winner'],
+            render: (_, raceResult) => raceResult['Driver'],
           },
           {
             title: 'CAR',
             dataIndex: 'Car',
             sorter: true,
-            render: (_, race) => race['Car'],
+            render: (_, raceResult) => raceResult['Car'],
           },
           {
             title: 'LAP',
             dataIndex: 'Laps',
             sorter: true,
-            render: (_, race) => race['Laps'],
+            render: (_, raceResult) => raceResult['Laps'],
+          },
+          {
+            title: 'TIME/RETIRED',
+            dataIndex: 'Time/Retired',
+            sorter: true,
+            render: (_, raceResult) => raceResult['Time/Retired'],
+          },
+          {
+            title: 'PTS',
+            dataIndex: 'PTS',
+            sorter: true,
+            render: (_, raceResult) => raceResult['PTS'],
           },
         ]}
       />
