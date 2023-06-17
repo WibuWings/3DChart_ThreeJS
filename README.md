@@ -20,7 +20,7 @@ To run this project, you need to have [Node.js](https://nodejs.org/) and [Yarn](
 First, clone this repository and install the dependencies:
 
 ```bash
-git clone [https://github.com/<your-username>/<your-repo-name>.git](https://github.com/WibuWings/VrillarTest.git)
+git clone https://github.com/WibuWings/VrillarTest.git
 cd <your-repo-name>
 yarn install
 ```
